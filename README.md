@@ -9,6 +9,11 @@ Participantes:
 - Belit Morais
 ````
 
+## Data Model
+
+### Quiz App
+
+![](diagrams/QuizDataModel.png)
 
 # Demonstração
 // TODO

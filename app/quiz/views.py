@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from quiz.models import Question
 
-# Create your views here.
+
+def test_view(request):
+    q = Question.objects.last()
+
+    return render(request, 'test.html', {'q': q})
+
