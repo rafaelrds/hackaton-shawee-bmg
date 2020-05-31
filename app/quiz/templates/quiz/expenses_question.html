@@ -1,0 +1,24 @@
+{% extends "base/layout.html" %}
+{% block page %}
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+    <h1>Vamos te ajudar a descobrir o quanto guardar.</h1>
+  </div>
+</div>
+
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+    <form class="form">
+      <div class="from-group row my-5">
+        <div class="col">
+          R$ <input type="text" class="form-control w-100" placeholder="Quanto você ganha por mês">
+        </div>
+        <div class="col">
+          R$ <input type="text" class="form-control w-100" placeholder="Quanto você gasta por mês">
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg btn-block">Avançar</button>
+    </form>
+  </div>
+</div>
+{% endblock page %}

@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 from quiz.models import Question
 
 
-def test_view(request):
-    q = Question.objects.last()
-
-    return render(request, 'index.html', {'q': q})
+@login_required
+def expenses(request):
+    return render(request, 'quiz/expenses_question.html', {})
 

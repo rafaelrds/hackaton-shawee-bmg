@@ -1,2 +1,4 @@
 django
 ipython
+django-crispy-forms
+Pillow
