@@ -1,6 +1,7 @@
 {% extends "base/layout.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
+
+{% block page %}
   <div class="content-section">
     <form method="POST">
       {% csrf_token %}
@@ -18,4 +19,4 @@
       </small>
     </div>
   </div>
-{% endblock content %}
+{% endblock page %}

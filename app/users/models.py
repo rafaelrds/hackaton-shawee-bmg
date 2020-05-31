@@ -42,7 +42,7 @@ class User(AbstractUser):
     """User model."""
 
     username = None
-    cpf_cnpj = models.CharField(_('CPF/CNPJ'), max_length=100, unique=True, null=False)
+    #cpf_cnpj = models.CharField(_('CPF/CNPJ'), max_length=100, unique=True, null=False)
     email = models.EmailField(_('email address'), unique=True)
 
     USERNAME_FIELD = 'email'

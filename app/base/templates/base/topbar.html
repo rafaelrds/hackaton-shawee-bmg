@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
     <!-- Sidebar - Brand -->
-    <a class="navbar-brand sidebar-brand d-flex align-items-center justify-content-center" style="color:orange;" href="index.html">
+    <a class="navbar-brand sidebar-brand d-flex align-items-center justify-content-center" style="color:orange;" href="{% url 'home' %}">
         <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i> </div>
         <div class="sidebar-brand-text mx-3">Realize</div>
     </a>
@@ -119,10 +119,16 @@
 
     <!-- Nav Item - User Information -->
     <li class="nav-item dropdown no-arrow">
+        {% if user.is_authenticated %}
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Caio Lopes</span>
-        <img class="img-profile rounded-circle" src="https://avatars0.githubusercontent.com/u/4184169?s=60&u=7ebf0475f46c39ad2f6392faa3dbb71fff1bf6e1&v=4">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.name }}</span>
+          <img class="img-profile rounded-circle" src="{{ user.profile.image.url }}">
         </a>
+        {% else %}
+        <a class="nav-link dropdown-toggle" href="{% url 'login' %}" id="userDropdown" role="button">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">Entrar</span>
+        </a>
+        {% endif %}
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
         <a class="dropdown-item" href="#">
