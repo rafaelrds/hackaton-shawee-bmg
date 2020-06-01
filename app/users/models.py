@@ -53,6 +53,7 @@ class User(AbstractUser):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    answered_quiz = models.BooleanField(default=False)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):

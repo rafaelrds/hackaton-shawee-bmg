@@ -29,11 +29,13 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <!-- Main Content -->
       <div id="content" class="d-flex flex-column h-90">
-        {% include "base/topbar.html" %}
-        <div class="p-2">
-          {% block page %}{% endblock %}
+          {% if not be_clean %}
+          {% include "base/topbar.html" %}
+          {% endif %}
+          <div {% if not be_clean %}class="p-2"{% endif %}>
+            {% block page %}{% endblock %}
+          </div>
         </div>
-      </div>
       {% include "base/footer.html" %}
     </div>
   </div>

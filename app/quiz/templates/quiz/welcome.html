@@ -1,0 +1,37 @@
+{% extends "base/layout.html" %}
+{% block page %}
+<style>
+.welcome-top {
+  display:block;
+  background-color:orange;
+  color:white;
+  border-bottom-left-radius:30%;
+  border-bottom-right-radius:30%;
+}
+
+img {
+  max-width: 80px;
+  max-height: 80px;
+}
+</style>
+
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+    <div class='welcome-top p-5'>
+      <div style="display: flex; justify-content:space-around;">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <p class='m-3'><b>Olá, {{ user.first_name }}! Seja bem vindo à sua nova vida financeira.</b></p>
+      </div>
+    </div>
+    <div class='p-2'>
+      <p>Vamos juntos contruir rotas para atingir os seus objetivos financeiros, desde guardar dinheiro até ser um grande investidor.</p>
+
+      <p>Está preparado para se tornar um grande conhecedor das suas finanças e dono do seu destino?</p>
+
+      <p>Começaremos com um quiz para entender melhor o seu perfil</p>
+
+      <center><a href="{% url 'quiz_question' quiz.pk 1 %}"><button class="btn btn-primary">Vamos lá</button></a></center>
+    </div>
+  </div>
+</div>
+{% endblock page %}

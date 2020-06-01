@@ -1,0 +1,26 @@
+{% extends "base/layout.html" %}
+{% block page %}
+<style>
+img {
+    width: 100%;
+    max-width:300px;
+}
+</style>
+<div class="row justify-content-md-center p-2">
+    <div class="col col-md-6">
+        {% if answer.is_correct %}
+        <h2>👏</h2>
+        {% else %}
+        <h2>🤔</h2>
+        {% endif %}
+        {{answer.screen.text|safe}}
+
+        <br><br>
+        {% if quiz.questions.all|length > question.position %}
+            <center><a href="{% url 'quiz_question' quiz.pk question.position|add:'+1' %}"><button class="btn btn-primary">Próximo</button></a></center>
+        {% else %}
+            <center><a href="{% url 'quiz_finish' %}"><button class="btn btn-primary">Ver como fui</button></a></center>
+        {% endif %}
+    </div>
+</div>
+{% endblock page %}

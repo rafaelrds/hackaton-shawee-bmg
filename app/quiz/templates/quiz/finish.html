@@ -1,0 +1,36 @@
+{% extends "base/layout.html" %}
+{% block page %}
+<style>
+.welcome-top {
+  display:block;
+  background-color:orange;
+  color:white;
+  border-bottom-left-radius:30%;
+  border-bottom-right-radius:30%;
+}
+
+img {
+  max-width: 80px;
+  max-height: 80px;
+}
+</style>
+
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+    <div class='welcome-top p-5'>
+      <div style="display: flex; justify-content:space-around;">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <h2 class='m-3'><b>{{ user.first_name }}, você marcou {{ points }} pontos de poupador</b></h2>
+      </div>
+    </div>
+    <div class='p-2'>
+
+      <p>E isso significa que você ainda é novo nesse universo de guardar dinheiro e no futuro sacar mais do que depositou hoje.</p>
+
+      <p>Assim, te convido a escolher um objetivo a ser atingido com a nossa ajuda.</p>
+
+      <center><a href="{% url 'home' %}"><button class="btn btn-primary">Vamos lá</button></a></center>
+    </div>
+  </div>
+</div>
+{% endblock page %}

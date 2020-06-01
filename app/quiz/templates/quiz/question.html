@@ -1,0 +1,49 @@
+{% extends "base/layout.html" %}
+{% block page %}
+<style>
+.welcome-top {
+  display:block;
+  background-color:orange;
+  color:white;
+}
+
+.ans-btn {
+  display: block;
+  border: 1px solid gray;
+  cursor:pointer;
+}
+
+.ans-btn:hover {
+  background-color:#ebebeb;
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+</style>
+
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+    <div class='welcome-top p-5'>
+      <div>
+        <b><center>{{question.text}}</center></b>
+      </div>
+    </div>
+    <div class='p-2'>
+      {% for ans in question.answers.all %}
+        <a href="{% url 'quiz_answer' ans.pk %}">
+          <div class="ans-btn mt-3 p-2">
+            {{ans.text}}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock page %}
