@@ -11,7 +11,7 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 def register(request):
     if request.user.is_authenticated:
-        return redirect('blog-home')
+        return redirect('home')
 
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)

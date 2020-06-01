@@ -1,15 +1,17 @@
 {% extends "base/layout.html" %}
 {% load crispy_forms_tags %}
 {% block page %}
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
   <div class="content-section">
     <form method="POST">
       {% csrf_token %}
       <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Log In</legend>
+        <legend class="border-bottom mb-4">Entrar</legend>
         {{ form|crispy }}
       </fieldset>
       <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">Login</button>
+        <button class="btn btn-primary" type="submit">Entrar</button>
         <small class="text-muted">
           <a class"ml-2" href="{% url 'password_reset' %}">Esqueceu a senha?</a>
         </small>
@@ -21,4 +23,6 @@
       </small>
     </div>
   </div>
+  </div>
+</div>
 {% endblock page %}
