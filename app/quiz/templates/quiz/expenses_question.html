@@ -8,18 +8,21 @@
 
 <div class="row justify-content-md-center">
   <div class="col col-lg-6">
-    <form class="form">
+    <form class="form" action="" method="post">
+      {% csrf_token %} 
       <div class="from-group row my-5">
         <div class="col">
           <h6>Quanto você ganha por mês?</h6>
-          <input type="text" class="form-control w-100" placeholder="R$ 0,00">
+          <input id="income" type="number" class="form-control w-100" placeholder="R$ 0,00">
         </div>
         <div class="col">
           <h6>Quanto você gasta por mês?<h6>
-          <input type="text" class="form-control w-100" placeholder="R$ 0,00">
+          <input id="outcome" type="number" class="form-control w-100" placeholder="R$ 0,00">
         </div>
       </div>
-      <button type="button" class="btn btn-primary btn-lg btn-block">Avançar</button>
+      <button type="text" class="btn btn-primary btn-lg btn-block">
+        <a href="/dashboard" style="color:white">Avançar</a>
+      </button>
     </form>
   </div>
 </div>

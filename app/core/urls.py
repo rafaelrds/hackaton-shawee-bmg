@@ -21,7 +21,7 @@ from django.contrib.auth import views as auth_views
 
 from users import views as user_views
 from quiz.views import expenses
-from dashboard.views import dash_home
+from dashboard.views import dash_home, dash_home_poor
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -47,6 +47,7 @@ urlpatterns = [
     ),
     path('', expenses, name='home'),
     path('dashboard/', dash_home, name='dashboard'),
+    path('dashboard2/', dash_home_poor, name='dashboard_poor'),
 ]
 
 if settings.DEBUG:
