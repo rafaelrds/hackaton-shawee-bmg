@@ -8,7 +8,9 @@ def dash_home(request):
         return render(request, 'dashboard/landing.html', {})
     if profile and not profile.answered_quiz:
         return redirect('quiz')
+    return render(request, 'dashboard/home2.html', {})
 
+def dash_home_poor2(request):
     return render(request, 'dashboard/home.html', {})
 
 

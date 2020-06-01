@@ -21,7 +21,7 @@ from django.contrib.auth import views as auth_views
 
 from users import views as user_views
 from quiz.views import expenses
-from dashboard.views import dash_home, dash_home_poor
+from dashboard.views import dash_home, dash_home_poor, dash_home_poor2
 from quiz.views import expenses, main_quiz, quiz_question, quiz_answer, quiz_finish
 
 urlpatterns = [
@@ -46,6 +46,7 @@ urlpatterns = [
          auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'),
          name='password_reset_done'
     ),
+    path('dashboard/', dash_home_poor2, name='dashboard_poor'),
     path('dashboard2/', dash_home_poor, name='dashboard_poor'),
     path('', dash_home, name='home'),
     path('quiz/', main_quiz, name='quiz'),
