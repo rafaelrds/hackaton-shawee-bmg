@@ -3,7 +3,10 @@ from django.contrib.auth.decorators import login_required
 
 
 def dash_home(request):
-    if not request.user.profile.answered_quiz:
+    profile = getattr(request.user, 'profile', None)
+    if profile and not profile.answered_quiz:
         return redirect('quiz')
+    else:
+        return redirect('register')
 
     return render(request, 'dashboard/home.html', {})
