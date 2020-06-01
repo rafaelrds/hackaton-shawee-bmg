@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from PIL import Image
+from decimal import Decimal
 
 
 class UserManager(BaseUserManager):
@@ -42,8 +43,9 @@ class User(AbstractUser):
     """User model."""
 
     username = None
-    #cpf_cnpj = models.CharField(_('CPF/CNPJ'), max_length=100, unique=True, null=False)
     email = models.EmailField(_('email address'), unique=True)
+    income = models.DecimalField(max_digits=10, decimal_places=2, default=Decimal())
+    expenses = models.DecimalField(max_digits=10, decimal_places=2, default=Decimal()) 
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
